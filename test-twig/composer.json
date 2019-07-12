@@ -1,0 +1,6 @@
+{
+    "name": "root/teste",
+    "require": {
+        "twig/twig": "^2.11"
+    }
+}
