@@ -1,38 +1,29 @@
+<?php
+require_once 'structure.php';
+?>
+
 <!DOCTYPE html>
 <html lang="en-us">
 
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
     <title>Wesley Games</title>
+
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/primeui/4.1.15/primeui-all.min.js"></script>
+
+    <link rel='stylesheet' href="https://cdnjs.cloudflare.com/ajax/libs/primeui/4.1.15/primeui-all.min.css">
 </head>
 
-<?php
-
-session_start();
-
-$_SESSION['tasks'] = array("Tarefa 1");
-
-if(isset($_POST['newTask']) == 1) {
-    $_SESSION['tasks'][] = $_POST['newTask'];
-}
-
-?>
-
 <body>
-    <h3>Tasks</h3>
+    <div>
+        <?php echo HTML::input("wesley") ?>
+        <?php echo HTML::input("rocha") ?>
+    </div>
 
-    <form action="index.php" method="post">
-        <input name="newTask">
-        <button type="submit">Adicionar</button>
-    </form>
-
-    <ul>
-        <?php foreach($_SESSION['tasks'] as $task): ?>
-        <li>
-            <span><?php echo $task ?></span>
-        </li>
-        <?php endforeach ?>
-    </ul>
+    <script>
+        <?php echo HTML::script() ?>
+    </script>
 </body>
 
 </html>
